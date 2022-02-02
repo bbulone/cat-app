@@ -1,6 +1,6 @@
 # cat-app
 
-My Cat APP usin react-native and the cat-API
+My Cat APP using react-native and the cat-API
 
 ```
 Get started :
