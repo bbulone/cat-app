@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Title } from "react-native-paper";
+import { QueryClient, QueryClientProvider } from "react-query";
+import FeedScreen from "./src/screens/FeedScreen";
 
-export default function App() {
+const queryClient = new QueryClient();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.mainContainer}>
+      <View style={styles.header}>
+        <Title>
+          <Text style={{ fontSize: 30, color: "white" }}>CATS APP</Text>
+        </Title>
+      </View>
+      <QueryClientProvider client={queryClient}>
+        <FeedScreen />
+      </QueryClientProvider>
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "black",
+  },
+  header: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#2c79c7",
+    minHeight: 150,
   },
 });
