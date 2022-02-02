@@ -35,6 +35,7 @@ const FeedScreen = () => {
           <Card.Title title="" subtitle="" />
           <Card.Content>
             <Card.Cover style={styles.image} source={{ uri: item.image.url }} />
+
             <Title style={{ color: "white" }}>{item.name}</Title>
             <Paragraph style={{ color: "white" }}>
               <Text>Origin: {item.origin} </Text>
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: "black",
+    borderBottomWidth: 3,
+    borderColor: "#20232a",
   },
   container: {
     paddingHorizontal: 20,
