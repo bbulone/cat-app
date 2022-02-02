@@ -3,7 +3,7 @@ import React from "react";
 import { useImage } from "./hooks/useImage";
 
 import { FlatList, SafeAreaView, View, StyleSheet, Text } from "react-native";
-import { Card, Paragraph, Title } from "react-native-paper";
+import { Card, Paragraph, Searchbar, Title } from "react-native-paper";
 import { useCats } from "./hooks/useCats";
 import { Item } from "react-native-paper/lib/typescript/components/List/List";
 
@@ -16,36 +16,35 @@ interface CatProps {
 
 const FeedScreen = () => {
   const { data, isError, isLoading, refetch } = useCats();
+
   if (isLoading) {
     return (
       <View>
-        <Text>Loading </Text>
+        <Text style={{ color: "white", fontSize: 50 }}>Loading ...</Text>
       </View>
     );
   }
   if (isError) {
-    return (
-      <View>
-        <Text>ERRORRR</Text>
-      </View>
-    );
+    return <View>Error 😕</View>;
   }
 
   const renderItem = ({ item }) => {
-    console.log(item);
-    // const source = useImage(item.name);
-
     return (
-      <Card style={styles.card}>
-        <Card.Title title="" subtitle="" />
-        <Card.Content>
-          <Card.Cover style={styles.image} source={{ uri: item.url }} />
-          <Title style={{ color: "white" }}>{item.id}</Title>
-          {/* <Paragraph>Model : {item.model}</Paragraph>
-          <Paragraph>Manufacturer : {item.manufacturer}</Paragraph>
-          <Paragraph>{item.cost_in_credits} Credits</Paragraph> */}
-        </Card.Content>
-      </Card>
+      <View>
+        <Card style={styles.card}>
+          <Card.Title title="" subtitle="" />
+          <Card.Content>
+            <Card.Cover style={styles.image} source={{ uri: item.image.url }} />
+            <Title style={{ color: "white" }}>{item.name}</Title>
+            <Paragraph style={{ color: "white" }}>
+              <Text>Origin: {item.origin} </Text>
+            </Paragraph>
+            <Paragraph style={{ color: "white" }}>
+              <Text>Temparament(s) : {item.temperament} </Text>
+            </Paragraph>
+          </Card.Content>
+        </Card>
+      </View>
     );
   };
 
