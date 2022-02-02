@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This is a react-native cat APP which displays cats ",
+    "githubUrl": "https://github.com/bbulone/cat-app"
   }
 }

@@ -8,3 +8,5 @@ Get started :
 npm i
 npm start
 ```
+
+EXPO LINK : https://expo.dev/@benjamin_bulone/catApp
