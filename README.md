@@ -4,7 +4,7 @@
 
 My Cat APP using react-native and the cat-API
 
-##Get started
+## Get started
 
 ``
 yarn i
